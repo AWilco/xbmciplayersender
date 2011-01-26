@@ -1,0 +1,14 @@
+content	xbmciplayersender	chrome/content/
+overlay	chrome://browser/content/browser.xul	chrome://xbmciplayersender/content/Overlay.xul
+
+override chrome://xbmciplayersender/content/Options.xul chrome://xbmciplayersender/content/FennecOptions.xul application={a23983c0-fd0e-11dc-95ff-0800200c9a66}
+override chrome://xbmciplayersender/content/Overlay.xul chrome://xbmciplayersender/content/FennecOverlay.xul application={a23983c0-fd0e-11dc-95ff-0800200c9a66}
+
+skin	xbmciplayersender	classic/1.0 chrome/skin/
+
+component {4933fdae-a715-4a05-b81e-ef5bcd13c800} components/uacontrolComp.js
+contract @awilco.net/xbmciplayersender;1 {4933fdae-a715-4a05-b81e-ef5bcd13c800}
+category profile-after-change iplayerUA @awilco.net/xbmciplayersender;1
+
+locale	xbmciplayersender	en-US	chrome/locale/en-US/
+

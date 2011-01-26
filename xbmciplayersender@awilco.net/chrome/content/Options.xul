@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://xbmciplayer/content/options.css"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://xbmciplayersender/locale/xbmciplayersender.dtd">
+
+<dialog id="XBMCiPlayerSenderOptions"
+		title="&options.title;"
+		buttons="accept, cancel"
+		onload="load0();"
+		ondialogaccept="saveSettings();"
+		xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <script type="text/javascript">
+        const pb=Components.classes["@mozilla.org/preferences;1"].createInstance(Components.interfaces.nsIPrefBranch);
+        const prefpre="extensions.xbmciplayersender.";
+        function load0(){
+            document.getElementById("enabled").checked=pb.getBoolPref(prefpre+"enabled");
+            document.getElementById("txtHostname").value=pb.getCharPref(prefpre+"hostname");
+            document.getElementById("txtPort").value=pb.getIntPref(prefpre+"port").toString();
+            document.getElementById("txtUsername").value=pb.getCharPref(prefpre+"username");
+            document.getElementById("txtPassword").value=pb.getCharPref(prefpre+"password");
+        }
+        function saveSettings(){
+            pb.setBoolPref(prefpre+"enabled",document.getElementById("enabled").checked);
+            pb.setCharPref(prefpre+"hostname",document.getElementById("txtHostname").value);
+            pb.setIntPref(prefpre+"port",parseInt(document.getElementById("txtPort").value));
+            pb.setCharPref(prefpre+"username",document.getElementById("txtUsername").value);
+            pb.setCharPref(prefpre+"password",document.getElementById("txtPassword").value);
+        }
+    </script>
+
+        
+
+    <vbox id="settings" flex="1">
+        <hbox>
+            <checkbox id="enabled" label="&options.enabled;" />    
+        </hbox>
+        <hbox>
+            <label value="&options.hostname;" />
+            <textbox id="txtHostname" value="" flex="1"/>
+        </hbox>
+        <hbox>
+            <label value="&options.port;" />
+            <textbox id="txtPort" value="" flex="1"/>
+        </hbox>
+        <hbox>
+            <label value="&options.username;" />
+            <textbox id="txtUsername" value="" flex="1"/>
+        </hbox>
+        <hbox>
+            <label value="&options.password;" />
+            <textbox id="txtPassword" type="password" value="" flex="1"/>
+        </hbox>
+    </vbox>
+    
+
+</dialog>

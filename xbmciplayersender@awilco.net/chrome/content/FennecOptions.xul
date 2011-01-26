@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <setting pref="extensions.xbmciplayersender.enabled" type="bool" title="Enabled">
+    Enable XBMC iPlayer sender
+  </setting>
+  <setting pref="extensions.xbmciplayersender.hostname" type="string" title="Host name">
+    The name or IP of your xbmc computer
+  </setting>
+  <setting pref="extensions.xbmciplayersender.port" type="integer" title="Port">
+    The name or IP of your xbmc computer
+  </setting>
+  <setting pref="extensions.xbmciplayersender.username" type="string" title="Username">
+    The username for logging into XBMC
+  </setting>
+  <setting pref="extensions.xbmciplayersender.password" type="string" title="Password">
+    The password fpr logging into XBMC
+  </setting>
+</vbox>
+

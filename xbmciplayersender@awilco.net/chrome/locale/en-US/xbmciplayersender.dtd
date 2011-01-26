@@ -1,0 +1,6 @@
+<!ENTITY	options.title							"XBMC iPlayer Sender Options">
+<!ENTITY	options.enabled				            "Enable XBMC iPlayer Sender">
+<!ENTITY	options.hostname				        "Hostname:">
+<!ENTITY	options.port				            "Port:">
+<!ENTITY	options.username				        "Username:">
+<!ENTITY	options.password				        "Password:">
