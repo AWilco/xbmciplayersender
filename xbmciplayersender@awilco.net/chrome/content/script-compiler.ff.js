@@ -44,8 +44,6 @@ isGreasemonkeyable: function(url) {
 },
 
 contentLoad: function(e) {
-
-    dump('In contentLoad');
 	var unsafeWin=e.target.defaultView;
 	if (unsafeWin.wrappedJSObject) unsafeWin=unsafeWin.wrappedJSObject;
 
@@ -66,7 +64,6 @@ contentLoad: function(e) {
 
 injectScript: function(script, url, unsafeContentWin) {
 
-    dump('In injectScript');
 	var sandbox, script, logger, storage, xmlhttpRequester;
 	var safeWin=new XPCNativeWrapper(unsafeContentWin);
 
@@ -101,7 +98,6 @@ injectScript: function(script, url, unsafeContentWin) {
 	sandbox.__proto__=sandbox.window;
 
 	try {
-    dump('Running Script');
 		this.evalInSandbox(
 			"(function(){"+script+"})()",
 			url,
@@ -219,8 +215,7 @@ addStyle:function(doc, css) {
 	head.appendChild(style);
 },
 
-onLoad: function() {
-    dump('In onLoad');
+onLoad: function() {;
 	var	appcontent=window.document.getElementById("appcontent");
 	if (appcontent && !appcontent.greased_xbmciplayersender_gmCompiler) {
 		appcontent.greased_xbmciplayersender_gmCompiler=true;
@@ -254,6 +249,5 @@ function dump(aMessage){
         Components.classes["@mozilla.org/consoleservice;1"].getService(Components.interfaces.nsIConsoleService);
     consoleService.logStringMessage("XBMC iPlayer: " + aMessage);
 }
-dump('in script');
 window.addEventListener('load', xbmciplayersender_gmCompiler.onLoad, false);
 window.addEventListener('unload', xbmciplayersender_gmCompiler.onUnLoad, false);

@@ -9,7 +9,6 @@
 
 var match = /iplayer\/episode\/([^\/#?]+)/.exec(window.location.href)
 var enabled = GM_getValue('enabled');
-GM_log('In script: ' + enabled);
 if (enabled)
 {
     if (match)

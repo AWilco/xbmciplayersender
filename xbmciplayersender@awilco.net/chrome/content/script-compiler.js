@@ -8,21 +8,15 @@ var xbmciplayersender_gmCompiler={
 // http://greasemonkey.devjavu.com/
 // used under GPL permission
 
-onMessage: function(message) {
-    dump(message.json.text);
-},
 onLoad: function() {
-    dump(window.messageManager);
     window.messageManager.addMessageListener("XBMCSender:Dump", xbmciplayersender_gmCompiler.onMessage);
     window.messageManager.loadFrameScript("chrome://xbmciplayersender/content/prefman.js", true);
     window.messageManager.loadFrameScript("chrome://xbmciplayersender/content/xmlhttprequester.js", true);
     window.messageManager.loadFrameScript("chrome://xbmciplayersender/content/content.js", true);
 
-    dump('End onLoad');
 },
 
 onUnLoad: function() {
-    dump('Remove Listeners');
 },
 
 }; //object xbmciplayersender_gmCompiler

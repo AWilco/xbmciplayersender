@@ -6,7 +6,7 @@ override chrome://xbmciplayersender/content/Overlay.xul chrome://xbmciplayersend
 
 skin	xbmciplayersender	classic/1.0 chrome/skin/
 
-component {4933fdae-a715-4a05-b81e-ef5bcd13c800} components/uacontrolComp.js
+component {4933fdae-a715-4a05-b81e-ef5bcd13c800} components/xbmciplayerComp.js
 contract @awilco.net/xbmciplayersender;1 {4933fdae-a715-4a05-b81e-ef5bcd13c800}
 category profile-after-change iplayerUA @awilco.net/xbmciplayersender;1
 
